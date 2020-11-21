@@ -17,7 +17,12 @@ begin
 end;
 function LaterInDay(p1, p2: DateTime): DateTime := p1;
 function LaterInYear(p1, p2: DateTime): DateTime := p1;
-function DaysInYear(year: integer): integer := 0;
+function DaysInYear(year: integer): integer;
+begin
+  If IsLeapYear(year) then
+    Result := 366
+  else Result := 365;
+end;
 function DaysInYearRange(year1, year2: integer): integer := 0;
 function SecondsInHours(hours: integer): integer := 0;
 
